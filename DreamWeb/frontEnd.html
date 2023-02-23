@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yumepad</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f1c40f;
+        color: #fff;
+        padding: 10px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .header .days {
+        margin-right: 20px;
+      }
+
+      .button {
+        background-color: #34495e;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .button:hover {
+        background-color: #2c3e50;
+      }
+
+      .container {
+        background-color: #dfe6e9;
+        padding: 20px;
+        height: 100vh;
+      }
+
+      .entry-form {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .entry-form textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="days">You've done it for 3 days!</div>
+      <button class="button">View All Entries</button>
+    </header>
+    <div class="container">
+      <div class="entry-form">
+        <h1>Welcome to Yumepad!</h1>
+        <p>Enter your dream for today:</p>
+        <form>
+          <textarea placeholder="Write your dream here..."></textarea>
+          <button type="submit" class="button">Save Entry</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
