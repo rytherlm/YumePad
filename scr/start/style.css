@@ -70,6 +70,19 @@ top: -5px;
     font-size: 1.2em;
     top: 20px;
 }
+.inputbox .toggle-password {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.inputbox input[type="password"] {
+  padding-right: 35px;
+}
 .forget{
     margin: -15px 0 15px ;
     font-size: .9em;
