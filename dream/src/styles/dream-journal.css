@@ -1,0 +1,141 @@
+/* styles for the Dream Journal page */
+
+/* layout styles for the entry form and entry list */
+.dream-journal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .entry-form {
+    flex: 0 0 400px;
+    margin-right: 30px;
+  }
+  
+  .entry-list {
+    flex: 1;
+  }
+  
+  /* styles for the new entry form */
+  .new-entry-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .new-entry-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .new-entry-form input,
+  .new-entry-form textarea {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f5f5f5;
+    font-size: 16px;
+  }
+  
+  .new-entry-form textarea {
+    height: 200px;
+  }
+  
+  .new-entry-form button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+  }
+  
+  /* styles for the entry card */
+  .entry-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .entry-card h2 {
+    margin-top: 0;
+  }
+  
+  .entry-card p {
+    margin-bottom: 10px;
+  }
+  
+  .entry-card button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .entry-card button.edit-btn {
+    background-color: #2196F3;
+  }
+  
+  .entry-card button.delete-btn {
+    background-color: #F44336;
+  }
+  
+  /* styles for the level tracker */
+  .level-tracker {
+    margin-top: 20px;
+  }
+  
+  .level-tracker h3 {
+    margin-top: 0;
+  }
+  
+  .level-tracker p {
+    margin-bottom: 5px;
+  }
+  
+  .level-tracker .progress-bar {
+    height: 20px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .level-tracker .progress-bar .progress {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s ease;
+  }
+  
+  .level-tracker .progress-bar .progress::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #4CAF50;
+  }
+  
+  .level-tracker .progress-bar .progress-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+  }
+  

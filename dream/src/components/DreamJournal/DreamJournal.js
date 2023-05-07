@@ -3,6 +3,8 @@ import { useAuth } from '../contexts/AuthContext';
 import { firestore } from '../firebase';
 import NewEntryForm from './NewEntryForm';
 import EntryList from './EntryList';
+import DreamJournal from './DreamJournal';
+
 
 function DreamJournal() {
   const { currentUser } = useAuth();
