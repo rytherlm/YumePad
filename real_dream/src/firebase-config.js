@@ -1,11 +1,12 @@
 import { initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider} from 'firebase/auth';
-import {getFirestore, enableIndexedDbPersistence} from 'firebase/firestore';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAyex6hTmTpVdSjzdbUoJe59jMzqeGLhEQ",
   authDomain: "yume-77345.firebaseapp.com",
+  databaseURL: "https://yume-77345-default-rtdb.firebaseio.com",
   projectId: "yume-77345",
   storageBucket: "yume-77345.appspot.com",
   messagingSenderId: "616261810801",
@@ -33,5 +34,5 @@ enableIndexedDbPersistence(db).catch((err) => {
 
 export { db, app };
 
-export const auth= getAuth(app);
+export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();

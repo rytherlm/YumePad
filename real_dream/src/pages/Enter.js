@@ -11,18 +11,20 @@ function Enter() {
 
   useEffect(() => {
     const fetchUserLastSubmitted = async () => {
-      const docRef = doc(db, "users", auth.currentUser.uid);
-      const docSnap = await getDoc(docRef);
+      if (auth.currentUser) {
+        const docRef = doc(db, "users", auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
 
-      if (docSnap.exists()) {
-        calculateTimeLeft(docSnap.data().lastSubmitted?.toDate());
-      } else {
-        // This is the user's first visit. Initialize their data.
-        const nextMidnight = new Date();
-        nextMidnight.setDate(nextMidnight.getDate() + 1);
-        nextMidnight.setHours(0,0,0,0);
-        await setDoc(docRef, { lastSubmitted: nextMidnight });
-        setDisabled(false);
+        if (docSnap.exists()) {
+          calculateTimeLeft(docSnap.data()?.lastSubmitted?.toDate());
+        } else {
+          // This is the user's first visit. Initialize their data.
+          const nextMidnight = new Date();
+          nextMidnight.setDate(nextMidnight.getDate() + 1);
+          nextMidnight.setHours(0,0,0,0);
+          await setDoc(docRef, { lastSubmitted: nextMidnight });
+          setDisabled(false);
+        }
       }
     };
 
@@ -50,23 +52,25 @@ function Enter() {
       tomorrow.setHours(0, 0, 0, 0);
       const lastSubmittedDate = new Date(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate() - 1);
 
-      const userDocRef = doc(db, "users", auth.currentUser.uid);
-      const userDocSnap = await getDoc(userDocRef);
-      const lastSubmitted = userDocSnap.data()?.lastSubmitted?.toDate();
+      if (auth.currentUser) {
+        const userDocRef = doc(db, "users", auth.currentUser.uid);
+        const userDocSnap = await getDoc(userDocRef);
+        const lastSubmitted = userDocSnap.data()?.lastSubmitted?.toDate();
 
-      if (!lastSubmitted || lastSubmitted < lastSubmittedDate) {
-        await addDoc(collection(db, "dreams"), {
-          content: content,
-          user: auth.currentUser.uid,
-          timestamp: serverTimestamp()
-        });
+        if (!lastSubmitted || lastSubmitted < lastSubmittedDate) {
+          await addDoc(collection(db, "dreams"), {
+            content: content,
+            user: auth.currentUser.uid,
+            timestamp: serverTimestamp()
+          });
 
-        await setDoc(userDocRef, { lastSubmitted: serverTimestamp() }, { merge: true });
+          await setDoc(userDocRef, { lastSubmitted: serverTimestamp() }, { merge: true });
 
-        setContent('');
-        setErrorMessage('');
-      } else {
-        setErrorMessage('You have already submitted a dream today. Try again tomorrow.');
+          setContent('');
+          setErrorMessage('');
+        } else {
+          setErrorMessage('You have already submitted a dream today. Try again tomorrow.');
+        }
       }
     }
   };
