@@ -1,0 +1,22 @@
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-with-google-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #4285f4;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 4px;
+  }
+  
+  .login-with-google-btn:hover {
+    background-color: #357ae8;
+  }
+  
