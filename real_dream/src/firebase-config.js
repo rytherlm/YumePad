@@ -4,14 +4,7 @@ import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAyex6hTmTpVdSjzdbUoJe59jMzqeGLhEQ",
-  authDomain: "yume-77345.firebaseapp.com",
-  databaseURL: "https://yume-77345-default-rtdb.firebaseio.com",
-  projectId: "yume-77345",
-  storageBucket: "yume-77345.appspot.com",
-  messagingSenderId: "616261810801",
-  appId: "1:616261810801:web:39ba10d92dd3fa546979d0",
-  measurementId: "G-RZSPMR5GPN"
+
 };
 
 // Initialize Firebase
