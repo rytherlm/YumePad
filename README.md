@@ -22,7 +22,7 @@ YumePad is a personal project created by Aidan Ryther. Aidan wrote all the code 
 
 # Showcase
 Here is an image showcasing the YumePad website:
-![YumePad Website](https://example.com/yumepad-screenshot.png)
+![YumePad Website](https://github.com/rytherlm/YumePad/blob/main/real_dream/public/imageYume.png)
 
 
 
